@@ -30,6 +30,9 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
+      - name: Debug Docker Username
+        run: echo "${{ secrets.DOCKER_USERNAME }}"
+
       - name: Build Docker Image
         run: |
           docker build -t ${{ secrets.DOCKER_USERNAME }}/node-ci-app:latest .
